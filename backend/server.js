@@ -26,6 +26,14 @@ function saveEmail(email) {
     }
 }
 
+const corsOptions = {
+  origin: ['https://frontend-moict3dup-richcom807-1282s-projects.vercel.app/'],
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
+
 // API : Enregistrement email
 app.post('/api/subscribe', (req, res) => {
     const { email } = req.body;
